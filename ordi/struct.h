@@ -1,22 +1,42 @@
-#ifndef STRUCTS_H
-#define STRUCTS_H
+#ifndef STRUCT_H
+#define STRUCT_H
 
-
-struct Alumno{
-    char matricula[10];
-    char carrera[5];    //mas punto si es con apuntadores
-    int semestre;
-    char correo[23];    //agrgar fin de cadena para poder imprimir todo
-    float calif[5][5];
-};
-
-struct Persona{
-    char *nombre;
+typedef struct
+{
+    char nombre[100];
     int edad;
-    char genero;
-    char fn[8];     //fecha de nacimiento
-    struct Persona *ptrSig;
-    struct Alumno *ptrAlum; //para encadenar
-};
+    char sexo;
+} Persona;
+
+typedef struct
+{
+    char nombre[50];
+
+    float parcial1;
+    float parcial2;
+    float parcial3;
+
+    float ordinario;
+    float promedio;
+
+} Materia;
+
+typedef struct
+{
+    Persona persona;
+
+    int matricula;
+    char carrera[50];
+    int semestre;
+
+    Materia materias[5];
+
+} Alumno;
+
+typedef struct Nodo
+{
+    Alumno alumno;
+    struct Nodo *siguiente;
+} Nodo;
 
 #endif

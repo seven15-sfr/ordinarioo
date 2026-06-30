@@ -1,30 +1,13 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "funcion/funcion.h"
 #include "menu.h"
-#include "altas.h"
-#include "struct.h"
 
-int main(void){
-    int op;
-    struct Persona *ptr=NULL;
+int main()
+{
+    Cola cola;
 
+    inicializarCola(&cola);
 
-   do{
-    op=menuPrincipal();
-    switch (op){
-        case 1://Datos de nuevo usuario
-            altas(&ptr);//conexión
-            break;
-        case 2:
+    menuPrincipal(&cola);
 
-            break;
-
-        default:
-            printf("nada aun \n");
-            break;
-        
-    }
-    }while (op!=2);
-      
     return 0;
 }
